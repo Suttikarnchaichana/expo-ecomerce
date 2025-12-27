@@ -1,0 +1,24 @@
+{
+  "name": "expo-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix admin && npm run build --prefix admin",
+    "start": "npm --prefix backend run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suttikarnchaichana/expo-ecomerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suttikarnchaichana/expo-ecomerce/issues"
+  },
+  "homepage": "https://github.com/Suttikarnchaichana/expo-ecomerce#readme"
+}
