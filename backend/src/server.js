@@ -1,6 +1,10 @@
 import express from "express"
 import path from "path";
 import { clerkMiddleware } from '@clerk/express';
+import { serve }  from "inngest/express";
+
+import { functions, inngest } from "./config/inngest.js";
+
 
 import { ENV } from "./config/env.js";
 import { connect } from "http2";
@@ -10,7 +14,10 @@ const app = express();
 
 const __dirname = path.resolve();
 
+app.use(express.json());
 app.use(clerkMiddleware());
+
+app.use("/api/inngest", serve({ client: inngest, functions: functions }));
 
 app.get("/api/health", (req, res) => {
     res.status(200).json({ message: "Success" });
